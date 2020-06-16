@@ -1,6 +1,11 @@
 # spring-boot-kafka
 
-This simple application connects to a kafka cluster and publishes and subscribes messages from a kafka topic. 
+This simple application connects to a kafka cluster installed on your local machine and publishes and subscribes messages from a kafka topic. 
+- [Local kafka setup](#local-kafka-setup)
+- [Testing local kafka using command line tools](#testing-local-kafka-using-command-line-tools)
+- [Kafka Tool setup](#kafka-tool-setup)
+- [Sending message using Kafka Tool UI](#sending-message-using-kafka-tool-UI)
+- [connecting,publishing & subscribing to Kafka topic using spring-boot](#connecting,publishing & subscribing to Kafka topic using spring-boot)
 
 ## Local kafka setup
 
@@ -86,7 +91,58 @@ Now let's try to send a message using Kafka Tool UI.
 
 3. Now click on the topic name which in this case is `book-update` and switch to the data tab. Click on `Retrieve messages` which looks like a play button to see the new meessages added from the previous step.
 
-## Spring-boot classes 
+## connecting,publishing & subscribing to Kafka topic using spring-boot 
+Before running the project let's look at some screenshots from the code base.
+
+1. Check `KafkaConsumerConfig` and `KafkaProducerConfig` classes in `core` package for consumer and producer configuration.
+
+2. Check `KafkaConsumer` class in the `service` package for code that cosumes messages from the topic `book-update`. You can add consumers for different topics in this class.
+
+   ![image](images/)
+
+3. spring-boot let's you create topic on a kafka cluster programmatically. Check class `KafkaTopicConfig` in `core` package. It will programmatically create a topic with the name you pass to it. Check `kafka.topic.name` in `application.properties` file to see the name of the topic we are creating. 
+
+    ![image](images/)
+
+4. we have two REST api's that you can use to publish message to a topic. 
+   a. POST service that accepts string message as body. You will have to pass a header with the topic name you wish to publish    the message to. 
+      ```
+       POST : http://localhost:8082/kafka/publish
+       HEADER : 
+               "key" : "topic-name",
+               "value": "book-update"
+      ```
+    b. POST service that accepts json as body. The body should match the structure of pojo books. Also you need to pass a header with the topic name you wish to publish the message to. 
+      ```
+      POST : http://localhost:8082/kafka/books/publish
+      HEADER : 
+              "key" : "topic-name",
+              "value": "book-update"
+      ``` 
+
+## Running the spring-boot project
+
+we have setup the cluster so let's try to run the project. 
+
+1. Clone this git repo 
+   
+   `git clone https://github.com/vivin12/spring-boot-kafka.git`
+   
+2. Just take a look at `application.properties` under `resources` folder of the project. By default springboot runs on 8080 but i changed it to 8082 because our zookeeper was using port 8080. 
+   
+   ![image](images/)
+   
+ 3. Now let's run the project : `mvn spring-boot:run`
+ 
+
+This git repo already has the code to 
+
+### Find the program using a specific port 
+This section is just for folks who are curious and want to see more details on the process using a specific port. 
+
+1. To find the process id usig a specific port run this command from your terminal window: `lsof -i :8080 | grep LISTEN`
+2. To get details on the process id : `ps -ef "pid"`
+
 1. 
    ![image](images/kt-local-new-topic.png)
       
