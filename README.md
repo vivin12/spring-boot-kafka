@@ -72,12 +72,19 @@ We are going to use Kafka Tool as a GUI for managing and using Kafka cluster. It
    
 4. You can see in the above image that messages are displayed in bytes. To change from byte to string switch both key and message to string and click update as show in the below screenshot.
    ![image](images/kt-local-topic-switch-string.png)
-5. 
+   
+5. Messages displayed in string.
    ![image](images/kt-local-topic-string.png)
-6. 
+   
+## Sending message using Kafka Tool UI
+Now let's try to send a message using Kafka Tool UI.
+1. Click on partition 0 under your topic name and then switch over to the Data tab and click on the plus sign and add single message.
    ![image](images/kt-local-topic-add-message.png)
-7. 
+   
+2. For both `key` and `value` section switch from `from file` to `Enter manually [HEX]`. In the below screenshot example i didn't give a value for `key`. Click on Add and you can keep adding messages if you want to.
    ![image](images/kt-local-topic-new-message.png)
+
+3. Now click on the topic name which in this case is `book-update` and switch to the data tab. Click on `Retrieve messages` which looks like a play button to see the new meessages added from the previous step.
 
 ## Spring-boot classes 
 1. 
@@ -88,6 +95,10 @@ We are going to use Kafka Tool as a GUI for managing and using Kafka cluster. It
 3. ![image](images/kt-local-book-publish-message.png)
 
 4. ![image](images/book-update-log.png)
+
+5. ![image](images/postman-publish-book-message.png)
+
+6. ![image](images/postman-publish-message.png)
 
 
 
