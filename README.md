@@ -56,7 +56,7 @@ In this section we will create a topic, a producer and a consumer and test the f
 
 We are going to use Kafka Tool as a GUI for managing and using Kafka cluster. It is a free tool as long as you are not using it for commericial purposes.
 
-***NOTE: Do not use this for any commericial purposes without purchasing a license*** 
+***NOTE: Do not use this tool for any commericial purposes without purchasing a license*** 
 
 1. Download link for the tool - https://www.kafkatool.com/download.html
 2. Once you have installed the software on your machine open the tool to setup the connection details. 
@@ -66,11 +66,11 @@ We are going to use Kafka Tool as a GUI for managing and using Kafka cluster. It
    ```
    ![image](images/kt-local-setup.png)
    
-3. Inside topics section you will see the `book-update` topic that we created earlier with the command line tool.
+3. Inside topics section you will see the `book-update` topic that we created earlier with the command line tool. When you click on the Data tab and click on `Retrieve messages` which looks like a play button to see the messages added earlier. Notice that by default the messages are displayed in bytes. In the next step we will convert it to string.  
 
    ![image](images/kt-local-topic-byte.png)
    
-4. You can see in the above image that messages are displayed in bytes. To change from byte to string switch both key and message to string and click update as show in the below screenshot.
+4. To change from byte to string switch over to the properties tab and change both key and message to string and click update as show in the below screenshot.
    ![image](images/kt-local-topic-switch-string.png)
    
 5. Messages displayed in string.
