@@ -98,13 +98,14 @@ Before running the project let's look at some screenshots from the code base.
 
 2. Check `KafkaConsumer` class in the `service` package for code that cosumes messages from the topic `book-update`. You can add consumers for different topics in this class.
 
-   ![image](images/)
+   ![image](images/kafka-consumer.png)
 
 3. spring-boot let's you create topic on a kafka cluster programmatically. Check class `KafkaTopicConfig` in `core` package. It will programmatically create a topic with the name you pass to it. Check `kafka.topic.name` in `application.properties` file to see the name of the topic we are creating. 
 
-    ![image](images/)
+    ![image](images/kafka-sprin-boot-topic.png)
 
 4. we have two REST api's that you can use to publish message to a topic. 
+   
    a. POST service that accepts string message as body. You will have to pass a header with the topic name you wish to publish    the message to. 
       ```
        POST : http://localhost:8082/kafka/publish
@@ -120,6 +121,8 @@ Before running the project let's look at some screenshots from the code base.
               "value": "book-update"
       ``` 
 
+   ![image](images/kafka-rest-apis.png)
+   
 ## Running the spring-boot project
 
 we have setup the cluster so let's try to run the project. 
@@ -130,7 +133,7 @@ we have setup the cluster so let's try to run the project.
    
 2. Just take a look at `application.properties` under `resources` folder of the project. By default springboot runs on 8080 but i changed it to 8082 because our zookeeper was using port 8080. 
    
-   ![image](images/)
+   ![image](images/kafka-consumer.png)
    
  3. Now let's run the project : `mvn spring-boot:run`
  
