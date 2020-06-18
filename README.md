@@ -62,7 +62,7 @@ In this section we will create a topic, a producer and a consumer and test the f
 
 We are going to use Kafka Tool as a GUI for managing and using Kafka cluster. It is a free tool as long as you are not using it for commericial purposes.
 
-***NOTE: Do not use this tool for any commericial purposes without purchasing a license*** 
+***NOTE: Do not use this tool for any commercial purposes without purchasing a license*** 
 
 1. Download link for the tool - https://www.kafkatool.com/download.html
 2. Once you have installed the software on your machine open the tool to setup the connection details. 
@@ -72,7 +72,7 @@ We are going to use Kafka Tool as a GUI for managing and using Kafka cluster. It
    ```
    ![image](images/kt-local-setup.png)
    
-3. Inside topics section you will see the `book-update` topic that we created earlier with the command line tool. When you click on the Data tab and click on `Retrieve messages` which looks like a play button to see the messages added earlier. Notice that by default the messages are displayed in bytes. In the next step we will convert it to string.  
+3. Inside topics section you will see the `book-update` topic that we created earlier with the command line tool. Click on the Data tab and click on `Retrieve messages` which looks like a play button to see the messages added earlier. Notice that by default the messages are displayed in bytes. In the next step we will convert it to string.  
 
    ![image](images/kt-local-topic-byte.png)
    
@@ -90,7 +90,7 @@ Now let's try to send a message using Kafka Tool UI.
 2. For both `key` and `value` section switch from `from file` to `Enter manually [HEX]`. In the below screenshot example i didn't give a value for `key`. Click on Add and you can keep adding messages if you want to.
    ![image](images/kt-local-topic-new-message.png)
 
-3. Now click on the topic name which in this case is `book-update` and switch to the data tab. Click on `Retrieve messages` which looks like a play button to see the new meessages added from the previous step.
+3. Now click on the topic name which in this case is `book-update` and switch to the data tab. Click on `Retrieve messages` which looks like a play button to see the new messages added from the previous step.
 
 ## Publishing and subscribing to kafka topic
 Before running the project let's look at some screenshots from the code base.
