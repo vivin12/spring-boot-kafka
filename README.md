@@ -5,7 +5,8 @@ This simple application connects to a kafka cluster installed on your local mach
 - [Testing local kafka using command line tools](#testing-local-kafka-using-command-line-tools)
 - [Kafka Tool setup](#kafka-tool-setup)
 - [Sending message using Kafka Tool UI](#sending-message-using-kafka-tool-UI)
-- [connecting,publishing & subscribing to Kafka topic using spring-boot](#connect-to-Kafka-topic-using-spring-boot)
+- [connecting,publishing & subscribing to Kafka topic using spring-boot](#connect)
+- [Find the program using a specific port](#Find-the-program-using-a-specific-port)
 
 ## Local kafka setup
 
@@ -153,7 +154,7 @@ we have setup the cluster so let's try to run the project.
   
    ![image](images/postman-publish-message.png)
 
-### Find the program using a specific port 
+## Find the program using a specific port 
 This section is just for folks who are curious and want to see more details on the process using a specific port. 
 
 1. To find the process id usig a specific port run this command from your terminal window : `lsof -i :8080 | grep LISTEN`
