@@ -111,14 +111,14 @@ Before running the project let's look at some screenshots from the code base.
        POST : http://localhost:8082/kafka/publish
        HEADER : 
                "key" : "topic-name",
-               "value": "book-update"
+               "value" : "book-update"
       ```
     b. POST service that accepts json as body. The body should match the structure of pojo books. Also you need to pass a header with the topic name you wish to publish the message to. 
       ```
       POST : http://localhost:8082/kafka/books/publish
       HEADER : 
               "key" : "topic-name",
-              "value": "book-update"
+              "value" : "book-update"
       ``` 
 
    ![image](images/kafka-rest-apis.png)
@@ -133,34 +133,28 @@ we have setup the cluster so let's try to run the project.
    
 2. Just take a look at `application.properties` under `resources` folder of the project. By default springboot runs on 8080 but i changed it to 8082 because our zookeeper was using port 8080. 
    
-   ![image](images/kafka-consumer.png)
+   ![image](images/application-properties.png)
    
- 3. Now let's run the project : `mvn spring-boot:run`
+3. Now let's run the project : `mvn spring-boot:run`
  
+4. Let's go and look at the kafka tool. You can see that the topic `book_update_new` got created programmatically once we ran the app. 
 
-This git repo already has the code to 
+   ![image](images/kt-local-new-topic.png)
+   
+5. Let's publish a message using the REST api. Below screenshot shows an example and don't forget to add the header `topic-name` when you hit the service. 
+
+   ![image](images/postman-publish-book-message.png)
+
+6. If you go back to the window you ran the spring-boot project from you can see the log message from the consumer that consumes the message published from the previous post. The below screenshot shows the same. 
+
+   ![image](images/book-update-log.png)
+   
+7. This last screenshot is the second REST api if you like to test it out and don't forget to add the header `topic-name` when you hit the service. 
+  
+   ![image](images/postman-publish-message.png)
 
 ### Find the program using a specific port 
 This section is just for folks who are curious and want to see more details on the process using a specific port. 
 
-1. To find the process id usig a specific port run this command from your terminal window: `lsof -i :8080 | grep LISTEN`
+1. To find the process id usig a specific port run this command from your terminal window : `lsof -i :8080 | grep LISTEN`
 2. To get details on the process id : `ps -ef "pid"`
-
-1. 
-   ![image](images/kt-local-new-topic.png)
-      
-2. ![image](images/kt-local-new-topic.png)
-
-3. ![image](images/kt-local-book-publish-message.png)
-
-4. ![image](images/book-update-log.png)
-
-5. ![image](images/postman-publish-book-message.png)
-
-6. ![image](images/postman-publish-message.png)
-
-
-
-
-
-
