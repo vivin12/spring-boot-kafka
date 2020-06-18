@@ -8,8 +8,6 @@ This simple application connects to a kafka cluster installed on your local mach
 - [Publishing and subscribing to kafka topic](#publishing-and-subscribing-to-kafka-topic)
 - [Find the program using a specific port](#Find-the-program-using-a-specific-port)
 
-& subscribing to Kafka topic using spring-boot
-
 ## Local kafka setup
 
 The steps outlined below are for MAC users.
