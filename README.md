@@ -5,7 +5,7 @@ This simple application connects to a kafka cluster installed on your local mach
 - [Testing local kafka using command line tools](#testing-local-kafka-using-command-line-tools)
 - [Kafka Tool setup](#kafka-tool-setup)
 - [Sending message using Kafka Tool UI](#sending-message-using-kafka-tool-UI)
-- [connecting,publishing](#connect)
+- [connecting publishing](#connecting-publishing)
 - [Find the program using a specific port](#Find-the-program-using-a-specific-port)
 
 ## Local kafka setup
