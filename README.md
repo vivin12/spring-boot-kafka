@@ -12,7 +12,7 @@ This simple application connects to a kafka cluster installed on your local mach
 
 The steps outlined below are for MAC users.
 
-1. `bew install kafka`
+1. `brew install kafka`
 2. Start zookeeper using brew services: `brew services start zookeeper`
    
    If you don't want to run it as a background service you can just run : `zookeeper-server-start /usr/local/etc/kafka/zookeeper.properties`
