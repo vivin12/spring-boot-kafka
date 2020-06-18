@@ -5,8 +5,10 @@ This simple application connects to a kafka cluster installed on your local mach
 - [Testing local kafka using command line tools](#testing-local-kafka-using-command-line-tools)
 - [Kafka Tool setup](#kafka-tool-setup)
 - [Sending message using Kafka Tool UI](#sending-message-using-kafka-tool-UI)
-- [connecting publishing](#connecting-publishing)
+- [connecting,publishing & subscribing to Kafka topic](#connecting,publishing-&-subscribing-to-Kafka-topic)
 - [Find the program using a specific port](#Find-the-program-using-a-specific-port)
+
+& subscribing to Kafka topic using spring-boot
 
 ## Local kafka setup
 
@@ -92,7 +94,7 @@ Now let's try to send a message using Kafka Tool UI.
 
 3. Now click on the topic name which in this case is `book-update` and switch to the data tab. Click on `Retrieve messages` which looks like a play button to see the new meessages added from the previous step.
 
-## connecting,publishing & subscribing to Kafka topic using spring-boot 
+## connecting,publishing & subscribing to Kafka topic
 Before running the project let's look at some screenshots from the code base.
 
 1. Check `KafkaConsumerConfig` and `KafkaProducerConfig` classes in `core` package for consumer and producer configuration.
