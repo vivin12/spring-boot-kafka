@@ -9,6 +9,7 @@ This simple application connects to a kafka cluster installed on your local mach
 - [Find the program using a specific port](#Find-the-program-using-a-specific-port)
 
 Information in this readme is also availble through GH pages - https://vivin12.github.io/spring-boot-kafka/
+
 Medium article link - https://medium.com/@vivinabraham12/kafka-with-spring-boot-kafka-kafka-tool-gui-setup-ff92f1e60381
 
 ## Local kafka setup
